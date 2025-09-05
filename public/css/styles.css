@@ -4,3 +4,36 @@
 *:after {
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #232232;
+}
+
+/******* Header ***************/ 
+#top-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.siteName a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.siteName a::after {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+#tools a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+#tools a::after {
+  text-decoration: none;
+  color: var(--primary-color);
+}
