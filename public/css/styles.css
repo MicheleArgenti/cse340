@@ -1,4 +1,4 @@
-/******* Change Box Model ***************/
+/*************** Change Box Model ***************/
 *,
 *:before,
 *:after {
@@ -7,9 +7,10 @@
 
 :root {
   --primary-color: #232232;
+  --secondary-color: #007BFF;
 }
 
-/******* Header ***************/ 
+/*************** Header ***************/ 
 #top-header {
   display: flex;
   flex-direction: row;
@@ -38,7 +39,7 @@
   color: var(--primary-color);
 }
 
-/******* Navigation ***************/ 
+/*************** Navigation ***************/ 
 .navigation {
   background-color: var(--primary-color);
   color: #FFFFFF;
@@ -56,3 +57,59 @@
   padding: 0.5rem;
   margin: 0.5rem;
 }
+
+/*************** Body ***************/ 
+.dmc-delorean {
+  position: absolute;
+  float: left;
+  margin-right: 20px;
+  background-color: rgba(218, 218, 218, 0.373);
+  color: var(--secondary-color);
+}
+
+.dmc-delorean li {
+  list-style: none;
+  font-size: 16px;
+}
+
+.dmc-delorean img {
+  height: 35px;
+  width: auto;
+}
+
+.dmc-delorean-picture img {
+  width: 80%;
+  height: auto;
+}
+
+.reviews {
+  line-height: 1.5;
+}
+
+.delorean-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.delorean-card {
+  background-color: var(--secondary-color);
+  padding: 0.5rem;
+  border: 1px solid #000000;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delorean-card a {
+  color: #FFFFFF;
+}
+
+.delorean-card a::after {
+  color: #FFFFFF;
+}
+
+
+/*************** Media Query ***************/ 
