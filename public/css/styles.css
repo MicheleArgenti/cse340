@@ -63,13 +63,14 @@
   position: absolute;
   float: left;
   margin-right: 20px;
-  background-color: rgba(218, 218, 218, 0.373);
-  color: var(--secondary-color);
+  background-color: rgba(228, 233, 234, 0.923);
 }
 
 .dmc-delorean li {
   list-style: none;
   font-size: 16px;
+  font-weight: bold;
+  color: var(--secondary-color);
 }
 
 .dmc-delorean img {
@@ -111,5 +112,34 @@
   color: #FFFFFF;
 }
 
-
 /*************** Media Query ***************/ 
+
+@media screen and (min-width: 720px) {
+  body {
+    background-image: url("/images/site/small_check.jpg");
+  }
+
+  #wrapper {
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    border: 5px solid var(--secondary-color);
+    padding: 10px;
+    background-color: #FFFFFF;
+  }
+  
+  .details-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dmc-delorean-reviews {
+    order: 2;
+    flex: 1;
+  }
+  
+  .dmc-delorean-upgrades {
+    order: 1;
+    flex: 1;
+  }
+}
