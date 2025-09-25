@@ -59,6 +59,10 @@
 }
 
 /*************** Body ***************/ 
+h1 {
+  text-align: center;
+}
+
 .dmc-delorean {
   position: absolute;
   float: left;
@@ -112,9 +116,15 @@
   color: #FFFFFF;
 }
 
+.veichles-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
 /*************** Media Query ***************/ 
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 800px) {
   body {
     background-image: url("/images/site/small_check.jpg");
   }
