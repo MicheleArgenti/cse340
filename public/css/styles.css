@@ -122,6 +122,34 @@ h1 {
   place-items: center;
 }
 
+.login-container {
+  display: flex;          
+  justify-content: center;
+  align-items: center;    
+}
+
+.login {
+  padding: 0.5rem;
+  background-color: #007BFF;
+}
+
+.register-container {
+  display: flex;          
+  justify-content: center;
+  align-items: center;    
+}
+
+.register {
+  padding: 0.5rem;
+  background-color: #007BFF;
+}
+
+.form-group {
+  padding:0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
 /*************** Media Query ***************/ 
 
 @media screen and (min-width: 800px) {
