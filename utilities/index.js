@@ -86,6 +86,16 @@ Util.builDetailDiv = async function (data) {
   return grid;
 }
 
+Util.buildManagementView = async function () {
+  let grid = `
+  <div class="management-grid">
+    <a href="#">Add new classification</a>
+    <a href="#">Add new inventory</a>
+  </div>
+  `
+  return grid;
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

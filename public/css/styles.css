@@ -123,9 +123,9 @@ h1 {
 }
 
 .login-container {
-  display: flex;          
+  display: flex;
   justify-content: center;
-  align-items: center;    
+  align-items: center;
 }
 
 .login {
@@ -148,6 +148,13 @@ h1 {
   padding:0.5rem;
   display: flex;
   flex-direction: column;
+}
+
+.management-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*************** Media Query ***************/ 
