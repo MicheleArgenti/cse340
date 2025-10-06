@@ -1,0 +1,20 @@
+<%# Title %>
+<% if(title) { %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+<%# Message %>
+<%- message %>
+<%# Body %>
+
+<div class="add-classification">
+    <form action="/inv/add-classification" method="post" id="add-classificationFrom" class="login">
+        <div class="form-group">
+            <label for="classification_name" class="form-label">Classification Name</label>
+            <span>The new classification name cannot contain a space or special character of any kind</span>
+            <input type="textcd " name="classification_name" id="classification_name" class="form-input" placeholder="Classification Name" required>
+        </div>
+        <button type="submit" class="login-button" id="addClassification">Add New Classification</button>
+    </form>
+</div>
