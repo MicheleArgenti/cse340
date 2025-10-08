@@ -1,0 +1,54 @@
+<%# Title %>
+<% if(title) { %>
+<h1><%= title %></h1>
+<% } else {
+    res.redirect('/')
+} %>
+<%# Message %>
+<%- message %>
+<%# Body %>
+
+<div class="update-inventory">
+    <form action="/inv/update-inventory" method="post" id="update-inventoryForm" class="login">
+        <div class="form-group">
+            <label for="make_name" class="form-label">Make Name</label>
+            <input type="text" name="make_name" id="make_name" class="form-input" placeholder="<%=locals.inv_make %>" required>
+        </div>
+        <div class="form-group">
+            <label for="model_name" class="form-label">Model Name</label>
+            <input type="text" name="model_name" id="model_name" class="form-input" placeholder="<%=locals.inv_model %>" required>
+        </div>
+        <div class="form-group">
+            <label for="year" class="form-label">Year</label>
+            <input type="text" name="year" id="year" class="form-input" placeholder="<%=locals.inv_year %>" required>
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" name="description" id="description" class="form-input" placeholder="<%=locals.inv_description %>" required>
+        </div>
+        <div class="form-group">
+            <label for="img" class="form-label">Image</label>
+            <input type="text" name="img" id="img" class="form-input" placeholder="<%=locals.inv_image %>" required>
+        </div>
+        <div class="form-group">
+            <label for="thumbnail" class="form-label">Thumbnail</label>
+            <input type="text" name="thumbnail" id="thumbnail" class="form-input" placeholder="<%=locals.inv_thumbnail %>" required>
+        </div>
+        <div class="form-group">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" name="price" id="price" class="form-input" placeholder="<%=locals.inv_price %>" required>
+        </div>
+        <div class="form-group">
+            <label for="miles" class="form-label">Miles</label>
+            <input type="text" name="miles" id="miles" class="form-input" placeholder="<%=locals.inv_miles %>" required>
+        </div>
+        <div class="form-group">
+            <label for="color" class="form-label">Color</label>
+            <input type="text" name="color" id="color" class="form-input" placeholder="<%=locals.inv_color %>" required>
+        </div>
+        <div class="form-group">
+            <%- classification %>
+        </div>
+        <button type="submit" class="login-button" id="addClassification">Update Inventory</button>
+    </form>
+</div>

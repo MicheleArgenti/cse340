@@ -140,6 +140,12 @@ h1 {
   align-items: center;
 }
 
+.update-inventory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login {
   padding: 0.5rem;
   background-color: #007BFF;
