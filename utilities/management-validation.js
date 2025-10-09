@@ -46,14 +46,14 @@ validate.addInventoryRules = () => {
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right make_name"),
       
         // model_name is required and must be string
         body("model_name")
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right model_name"),
       
         // year is required and must be 4 character
         body("year")
@@ -61,28 +61,28 @@ validate.addInventoryRules = () => {
         .escape()
         .notEmpty()
         .isLength({max: 4})
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right year"),
       
         // description is required and must be string
         body("description")
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right description"),
       
         // img is required and must be string
         body("img")
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right img"),
       
         // thumbnail is required and must be string
         body("thumbnail")
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right thumbnail"),
       
         // price is required and must be string
         body("price")
@@ -90,7 +90,7 @@ validate.addInventoryRules = () => {
         .escape()
         .notEmpty()
         .isNumeric()  
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right price"),
       
         // miles is required and must be string
         body("miles")
@@ -98,21 +98,21 @@ validate.addInventoryRules = () => {
         .escape()
         .notEmpty()
         .isNumeric() 
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right miles"),
       
         // color is required and must be string
         body("color")
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right color"),
       
         // classification is required and must be string
-        body("classification")
+        body("classification_id")
         .trim()
         .escape()
         .notEmpty()
-        .withMessage("Pleas insert the right value"),
+        .withMessage("Pleas insert the right classification"),
     ]
 }
 
@@ -122,10 +122,12 @@ validate.checkAddInventory = async (req, res, next) => {
   errors = validationResult(req)
   if (!errors.isEmpty()) {
     let nav = await utilities.getNav()
+    let classification = await utilities.getClassifications()
     res.render("inventory/add-inventory", {
       title: "Add inventory view",
       nav,
       make_name,
+      classification
     })
     return
   }

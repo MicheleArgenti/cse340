@@ -88,15 +88,15 @@ Util.builDetailDiv = async function (data) {
   return grid;
 }
 
-// Util.buildManagementView = async function () {
-//   let grid = `
-//   <div class="management-grid">
-//     <a href="./add-classification">Add new classification</a>
-//     <a href="./add-inventory">Add new Inventory</a>
-//   </div>
-//   `
-//   return grid;
-// }
+Util.buildManagementView = async function () {
+  let grid = `
+  <div class="management-grid">
+    <a href="./add-classification">Add new classification</a>
+    <a href="./add-inventory">Add new Inventory</a>
+  </div>
+  `
+  return grid;
+}
 
 Util.getClassifications = async function () {
   let classificationList = await invModel.getClassifications();

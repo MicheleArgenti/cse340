@@ -39,14 +39,14 @@ invCont.buildByDetailsId = async function (req, res, next) {
  *  Build management view
  * ************************** */
 invCont.buildManagementView = async function (req, res, next) {
-  // let grid = await utilities.buildManagementView()
+  let grid = await utilities.buildManagementView()
   let nav = await utilities.getNav()
   let classification = await utilities.getClassifications()
   res.render("./inventory/management", {
     title: "Management view",
     message: null,
     nav,
-    // grid,
+    grid,
     classification
   })
 }

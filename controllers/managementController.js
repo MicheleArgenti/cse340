@@ -9,6 +9,7 @@ async function addController(req, res) {
 
   const regResult = await managementModel.addController(classification_name)
   const grid = await utilities.buildManagementView()
+  const classification = await utilities.getClassifications()
 
   if (regResult) {
     req.flash(
@@ -21,6 +22,7 @@ async function addController(req, res) {
       errors: null,
       message: "Success! Added a new classification",
       grid,
+      classification
     })
   } else {
     req.flash("notice", "Sorry, failed to add a new controller.")
@@ -30,11 +32,12 @@ async function addController(req, res) {
 async function addInventory(req, res) {
   let nav = await utilities.getNav()
   const {
-    make_name, model_name, year, description, img, thumbnail, price, miles, color, classification
+    make_name, model_name, year, description, img, thumbnail, price, miles, color, classification_id
   } = req.body
 
-  const regResult = await managementModel.addInventory(make_name, model_name, year, description, img, thumbnail, price, miles, color, classification)
+  const regResult = await managementModel.addInventory(make_name, model_name, year, description, img, thumbnail, price, miles, color, classification_id)
   const grid = await utilities.buildManagementView()
+  const classification = await utilities.getClassifications()
 
   if (regResult) {
     req.flash(
@@ -47,6 +50,7 @@ async function addInventory(req, res) {
       errors: null,
       message: "Success! Added a new inventory",
       grid,
+      classification
     })
   } else {
     req.flash("notice", "Sorry, failed to add a new inventory.")
