@@ -49,9 +49,10 @@
         <div class="form-group">
             <%- classification %>
         </div>
-        <button type="submit" class="login-button" id="addClassification">Update Inventory</button>
-        <input type="hidden" name="inv_id" <% if(locals.inv_id) { 
-            %> value="<%= locals.inv_id %>"
+        <button type="submit" class="login-button" id="addClassification" disabled>Update Inventory</button>
+        <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
         <% } %>>
     </form>
 </div>
+
+<script src="../../js/inv-update.js"></script>
