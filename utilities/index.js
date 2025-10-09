@@ -101,8 +101,8 @@ Util.builDetailDiv = async function (data) {
 Util.getClassifications = async function () {
   let classificationList = await invModel.getClassifications();
   let classifications = `
-  <label for="classification">Choose a classification:</label>
-  <select id="classificationList" name="classification">
+  <label for="classification_id">Choose a classification:</label>
+  <select id="classificationList" name="classification_id">
   `
   classificationList.rows.forEach(classification => { 
     classifications += `<option value="${classification["classification_id"]}">${classification["classification_name"]}</option>`

@@ -7,13 +7,13 @@ const managementController = require("../controllers/managementController")
 const managementValidate = require('../utilities/management-validation')
 
 // Route to build inventory by classification view
-router.get("/type/:classificationId", invController.buildByClassificationId);
+router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
 // Route to build inventory by detail view
-router.get("/detail/:detailsId", invController.buildByDetailsId);
+router.get("/detail/:detailsId", utilities.handleErrors(invController.buildByDetailsId));
 // Route to management view
-router.get("/management", invController.buildManagementView);
+router.get("/management", utilities.handleErrors(invController.buildManagementView));
 // Route to add-classification view
-router.get("/add-classification", invController.buildAddClassificationView);
+router.get("/add-classification", utilities.handleErrors(invController.buildAddClassificationView));
 // Route to add a new classification in the DB
 router.post(
     "/add-classification",
@@ -31,10 +31,10 @@ router.post(
     utilities.handleErrors(managementController.addInventory)
 );
 // Route to get inventory based on classification id
-router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
 // Route to edit an inventory
-router.get("/edit/:inv_id", /*utilities.checkLogin, utilities.checkInventoryEditPermission,*/ utilities.handleErrors(invController.editInventoryView))
-// Route to delete an inventory
-// router.get("/delete/:inv_id", utilities.checkLogin, utilities.checkInventoryEditPermission, utilities.handleErrors(invController.deleteInventoryView))
+router.get("/edit/:inv_id", /*utilities.checkLogin, utilities.checkInventoryEditPermission,*/ utilities.handleErrors(invController.editInventoryView));
+// Route to update an inventory
+router.post("/update/", utilities.handleErrors(invController.updateInventory));
 
 module.exports = router;
