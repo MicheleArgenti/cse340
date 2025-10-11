@@ -188,6 +188,12 @@ h1 {
   align-items: center;
 }
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
 /*************** Media Query ***************/ 
 
 @media screen and (min-width: 800px) {
