@@ -16,6 +16,8 @@ invCont.buildByClassificationId = async function (req, res, next) {
     title: className + " vehicles",
     nav,
     grid,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -32,6 +34,8 @@ invCont.buildByDetailsId = async function (req, res, next) {
     title: name,
     nav,
     grid,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -47,7 +51,9 @@ invCont.buildManagementView = async function (req, res, next) {
     message: null,
     nav,
     grid,
-    classification
+    classification,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -59,7 +65,9 @@ invCont.buildAddClassificationView = async function (req, res, next) {
   res.render("./inventory/add-classification", {
     title: "Add Classification View",
     message: null,
-    nav
+    nav,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -73,7 +81,9 @@ invCont.buildAddInventoryView = async function (req, res, next) {
     title: "Add Inventory View",
     message: null,
     nav,
-    classification
+    classification,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -114,7 +124,9 @@ invCont.editInventoryView = async function (req, res, next) {
     inv_price: itemData[0].inv_price,
     inv_miles: itemData[0].inv_miles,
     inv_color: itemData[0].inv_color,
-    classification_id: itemData[0].classification_id
+    classification_id: itemData[0].classification_id,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -149,7 +161,9 @@ invCont.updateInventory = async function (req, res, next) {
     inv_price,
     inv_miles,
     inv_color,
-    classification_id
+    classification_id,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
     })
   }
 }
@@ -177,7 +191,9 @@ invCont.deleteInventoryView = async function (req, res, next) {
     inv_price: itemData[0].inv_price,
     inv_miles: itemData[0].inv_miles,
     inv_color: itemData[0].inv_color,
-    classification_id: itemData[0].classification_id
+    classification_id: itemData[0].classification_id,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
   })
 }
 
@@ -200,7 +216,9 @@ invCont.confirmDeleteInventory = async function (req, res, next) {
     res.status(501).render("./inventory/delete-confirm", {
     title: "Delete " + itemName,
     message: null,
-    nav
+    nav,
+    loggedIn: res.locals.loggedin,
+    accountName: res.locals.accountData.account_type
     })
   }
 

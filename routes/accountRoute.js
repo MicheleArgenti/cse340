@@ -25,5 +25,18 @@ router.post(
 )
 // Default route
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccount))
+// Logout route
+router.get("/logout", utilities.handleErrors(accountController.accountLogout))
+// Route to edit the account information view
+router.get("/edit-account", utilities.handleErrors(accountController.accountEdit))
+// Route to edit the account information
+router.post("/edit-account", utilities.handleErrors(accountController.editAccount))
+// Route to change password
+router.post(
+    "/edit-password",
+    regValidate.changePasswordRules(),
+    regValidate.checkChangePasswordData,
+    utilities.handleErrors(accountController.changePassword)
+)
 
 module.exports = router;

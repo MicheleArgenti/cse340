@@ -152,6 +152,13 @@ h1 {
   align-items: center;
 }
 
+.edit-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
 .login {
   padding: 0.5rem;
   background-color: #007BFF;

@@ -153,4 +153,17 @@ Util.checkJWTToken = (req, res, next) => {
   }
 }
 
+/* ****************************************
+*  Check permisson
+* ************************************ */
+Util.checkPermission = (req, res, next) => {
+  console.log(res.locals)
+  if (res.locals.accountData.account_type === 'Admin' || res.locals.accountData.account_type === 'Employee') {
+    next()
+  } else {
+    req.flash("notice", "You are not authorized.")
+    return res.redirect("/")
+  }
+}
+
 module.exports = Util

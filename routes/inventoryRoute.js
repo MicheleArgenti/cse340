@@ -11,9 +11,9 @@ router.get("/type/:classificationId", utilities.handleErrors(invController.build
 // Route to build inventory by detail view
 router.get("/detail/:detailsId", utilities.handleErrors(invController.buildByDetailsId));
 // Route to management view
-router.get("/management", utilities.handleErrors(invController.buildManagementView));
+router.get("/management", utilities.checkPermission, utilities.handleErrors(invController.buildManagementView));
 // Route to add-classification view
-router.get("/add-classification", utilities.handleErrors(invController.buildAddClassificationView));
+router.get("/add-classification", utilities.checkPermission, utilities.handleErrors(invController.buildAddClassificationView));
 // Route to add a new classification in the DB
 router.post(
     "/add-classification",
@@ -22,7 +22,7 @@ router.post(
     utilities.handleErrors(managementController.addController)
 );
 // Route to add-invetory view
-router.get("/add-inventory", invController.buildAddInventoryView);
+router.get("/add-inventory", utilities.checkPermission, invController.buildAddInventoryView);
 // Route to add a new inventory in the DB
 router.post(
     "/add-inventory",
@@ -31,13 +31,13 @@ router.post(
     utilities.handleErrors(managementController.addInventory)
 );
 // Route to get inventory based on classification id
-router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
+router.get("/getInventory/:classification_id", utilities.checkPermission, utilities.handleErrors(invController.getInventoryJSON));
 // Route to edit an inventory
-router.get("/edit/:inv_id", /*utilities.checkLogin, utilities.checkInventoryEditPermission,*/ utilities.handleErrors(invController.editInventoryView));
+router.get("/edit/:inv_id", utilities.checkPermission, utilities.handleErrors(invController.editInventoryView));
 // Route to update an inventory
 router.post("/update/", utilities.handleErrors(invController.updateInventory));
 // Route to delete an inventory
-router.get("/delete/:inv_id", /*utilities.checkLogin, utilities.checkInventoryEditPermission,*/ utilities.handleErrors(invController.deleteInventoryView))
+router.get("/delete/:inv_id", utilities.checkPermission, utilities.handleErrors(invController.deleteInventoryView))
 // Route to confirm the delete of the inventory
 router.post("/confirm-delete/", utilities.handleErrors(invController.confirmDeleteInventory))
 
